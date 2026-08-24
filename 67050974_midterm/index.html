@@ -12,17 +12,17 @@
     <header>
         <h1>Smart Event Hub</h1>
         <nav>
-            <button type="button"> <img src="https://cdn-icons-png.flaticon.com/128/4489/4489231.png" alt="moon">Dark Mode</button>
-            <button type="button">+ เพิ่มกิจกรรมใหม่</button>
+            <button type="button" id="darkModeBtn"> <img src="https://cdn-icons-png.flaticon.com/128/4489/4489231.png" alt="moon">Dark Mode</button>
+            <button type="button" id="addEventBtn">+ เพิ่มกิจกรรมใหม่</button>
         </nav>
     </header>
 
     <main>
         <aside>
             <h2> <img src="https://cdn-icons-png.flaticon.com/128/2567/2567943.png" alt="stat">สถิติภาพรวม</h2>
-            <p>กิจกรรมทั้งหมด: 0</p>
-            <p>ลงทะเบียนแล้ว: 0</p>
-            <p>ที่นั่งว่างรวม: 0</p>
+            <p>กิจกรรมทั้งหมด: <span id="total-events">0</span></p>
+            <p>ลงทะเบียนแล้ว: <span id="registered-events">0</span></p>
+            <p>ที่นั่งว่างรวม: <span id="available-seats">0</span></p>
         </aside>
 
         <section>
@@ -49,7 +49,7 @@
                     </select>
                 </div>
                 <div>
-                    <button type="reset">คืนค่าข้อมูลเริ่มต้น</button>
+                    <button type="button" id="resetBtn">คืนค่าข้อมูลเริ่มต้น</button>
                     <button type="submit">ค้นหา</button>
                 </div>
             </form>
@@ -62,11 +62,11 @@
             </div>
         </section>
 
-        <aside>
+        <aside id="admin-panel" class="hidden">
             <h2>เพิ่มกิจกรรมใหม่ (Admin Only)</h2>
-            <button type="button" aria-label="Close">×</button>
+            <button type="button" id="closeAdminBtn" aria-label="Close">×</button>
             
-            <form>
+            <form id="add-event-form">
                 <div>
                     <label for="event-title">ชื่อกิจกรรม *</label>
                     <input type="text" id="event-title" name="event-title" required>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div>
-                    <button type="button">ยกเลิก</button>
+                    <button type="button" id="cancelAdminBtn">ยกเลิก</button>
                     <button type="submit">บันทึกกิจกรรม</button>
                 </div>
             </form>
