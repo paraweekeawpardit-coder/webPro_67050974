@@ -84,7 +84,7 @@ function searchEvent() {
   updateStatic();
 
   if (search.length === 0) {
-    eventContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">ไม่พบกิจกรรมที่ค้นหา</p>';
+    eventContainer.innerHTML = '<p>ไม่พบกิจกรรมที่ค้นหา</p>';
     return;
   }
 
@@ -92,7 +92,7 @@ function searchEvent() {
     const card = document.createElement('div');
     card.className = 'card';
 
-    let btnText = `ลงทะเบียน (ว่าง ${event.seats})`;
+    let btnText = `ลงทะเบียน (${event.seats})`;
     let isDisabled = false;
 
     if (event.isRegistered) {
@@ -209,7 +209,6 @@ function handleAddEvent(event) {
   }
   if (seats <= 0) {
     alert("จำนวนที่นั่งเปิดรับต้องมากกว่า 0 ที่นั่ง");
-    seatsInput.focus();
     return;
   }
 
@@ -219,7 +218,6 @@ function handleAddEvent(event) {
 
   if (selectedDate < today) {
     alert("วันที่จัดงานต้องไม่เป็นวันที่ในอดีต");
-    dateInput.focus();
     return;
   }
 
