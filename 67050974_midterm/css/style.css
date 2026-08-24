@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+}
+
+header nav button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+header nav button img {
+    width: 16px;
+    height: 16px;
+}
+
+header nav button:hover {
+    background-color: #f0f0f0;
+}
+
+header nav button:last-child {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
+
+header nav button:last-child:hover {
+    background-color: #1d4ed8;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+aside, section {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+aside h2, section h2 {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+aside h2 img, section h2 img {
+    width: 20px;
+    height: 20px;
+}
+
+main > aside:first-child p {
+    background: #f8fafc;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+section form > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 180px;
+}
+
+section form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #475569;
+}
+
+section form input,
+section form select,
+aside form input,
+aside form select,
+aside form textarea {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+section form input:focus,
+section form select:focus {
+    border-color: #2563eb;
+}
+
+section form > div:last-child {
+    flex-direction: row;
+    gap: 8px;
+}
+
+button[type="reset"] {
+    background-color: #e2e8f0;
+    color: #475569;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main section:nth-child(2) {
+    grid-column: 2 / -1;
+}
+
+#eventContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.btn-register {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 10px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-register:hover {
+    background-color: #059669;
+}
+
+.btn-register:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+main > aside:last-child {
+    grid-column: 1 / -1;
+    border-top: 2px solid #e2e8f0;
+    position: relative;
+}
+
+main > aside:last-child button[aria-label="Close"] {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+aside form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+aside form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+aside form > div:nth-child(6) {
+    grid-column: 1 / -1;
+}
+
+aside form > div:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    main section:nth-child(2) {
+        grid-column: 1 / -1;
+    }
+}
