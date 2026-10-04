@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     setLoading(true)
     setError('')
-    
+    // ใช้ fakestoreapi ไม่ได้ค่ะหนูเลยใช้อันนี้แทน
     fetch('https://dummyjson.com/products')
       .then((res) => {
         if (!res.ok) throw new Error('ไม่สามารถเชื่อมต่อ API ได้')
@@ -76,7 +76,6 @@ function App() {
       />
 
       <main className="max-w-7xl mx-auto p-6 flex-grow w-full">
-        {/* ค้นหา / หมวดหมู่ / เรียงลำดับ */}
         <div className="bg-white p-6 rounded-xl shadow-md mb-8 space-y-4">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
@@ -128,14 +127,12 @@ function App() {
           </div>
         )}
 
-        {/* 2. Error State */}
         {error && !loading && (
           <div className="p-10 text-center text-red-600 bg-red-50 rounded-xl border border-red-200">
             <p className="text-xl font-bold">⚠️ {error}</p>
           </div>
         )}
 
-        {/* 3. Empty State */}
         {!loading && !error && filteredProducts.length === 0 && (
           <div className="p-16 text-center bg-white rounded-xl shadow-sm">
             <p className="text-4xl mb-3">🔍</p>
@@ -144,7 +141,6 @@ function App() {
           </div>
         )}
 
-        {/* Display Products */}
         {!loading && !error && filteredProducts.length > 0 && (
           <ProductList
             products={filteredProducts}
