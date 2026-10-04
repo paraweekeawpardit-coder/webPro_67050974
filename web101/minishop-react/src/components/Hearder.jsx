@@ -7,12 +7,12 @@ function Header({ cartCount, onOpenProfile }) {
         </h1>
         
         <div className="flex items-center gap-6">
-          {/* เมนู Products */}
+
           <span className="text-gray-600 font-medium">
             Products
           </span>
 
-          {/* ปุ่ม Profile (เพิ่ม onClick ให้ทำงานร่วมกับ Modal Profile) */}
+
           <button 
             onClick={onOpenProfile}
             className="text-gray-600 hover:text-blue-600 font-medium transition-colors cursor-pointer flex items-center gap-1"
@@ -20,7 +20,6 @@ function Header({ cartCount, onOpenProfile }) {
             👤 Profile
           </button>
 
-          {/* ตะกร้าสินค้า Cart */}
           <div className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2">
             🛒 Cart: <span className="text-blue-900 font-bold">{cartCount}</span>
           </div>
