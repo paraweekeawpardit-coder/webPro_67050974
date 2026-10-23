@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "Laptop",
+      "price": 27900,
+      "description": "โน้ตบุ๊กทรงพลัง เหมาะสำหรับการทำงานและการเล่นเกม",
+      "id": "1"
+    },
+    {
+      "name": "Headphones",
+      "price": 4000,
+      "description": "หูฟังตัดเสียงรบกวน คุณภาพเสียงระดับพรีเมียม",
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "name": "Smartwatch",
+      "price": 5900,
+      "description": "นาฬิกาอัจฉริยะ ติดตามสุขภาพและการออกกำลังกาย"
+    },
+    {
+      "name": "Book",
+      "price": 400,
+      "description": "death note",
+      "id": "1LOOewT"
+    }
+  ]
+}
